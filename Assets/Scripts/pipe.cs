@@ -12,7 +12,7 @@ public class pipe : MonoBehaviour
     {
         Debug.Log("here");
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(-transform.right * 100.0f);
+        rb.velocity = new Vector3(-10, 0, 0);
     }
 
     // Update is called once per frame
