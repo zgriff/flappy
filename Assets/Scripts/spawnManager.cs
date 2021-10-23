@@ -14,7 +14,6 @@ public class spawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(_pipePrefab.GetComponent<SpriteRenderer>().bounds.size.y);
         StartCoroutine(SpawnCoroutine());
     }
 
@@ -27,6 +26,7 @@ public class spawnManager : MonoBehaviour
 
     IEnumerator SpawnCoroutine()
     {
+        yield return new WaitForSeconds(3f);
         while (true)
         {
             float topPos = Random.Range(1.0f,4.0f) + _pipePrefab.GetComponent<SpriteRenderer>().bounds.size.y / 2;

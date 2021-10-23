@@ -10,7 +10,6 @@ public class pipe : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("here");
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector3(-10, 0, 0);
     }
