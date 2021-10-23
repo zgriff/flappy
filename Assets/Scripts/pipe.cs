@@ -20,4 +20,9 @@ public class pipe : MonoBehaviour
     {
         
     }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -42,7 +42,7 @@ public class spawnManager : MonoBehaviour
             topPipe.transform.parent = _pipeContainer.transform;
             botPipe.transform.parent = _pipeContainer.transform;
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2f);
         }
     }
 
