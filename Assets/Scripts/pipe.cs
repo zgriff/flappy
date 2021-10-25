@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pipe : MonoBehaviour
+public class Pipe : MonoBehaviour
 {
 
     private Rigidbody2D rb;

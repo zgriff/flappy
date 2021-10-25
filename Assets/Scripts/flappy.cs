@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class flappy : MonoBehaviour
+public class Flappy : MonoBehaviour
 {
 
     public Rigidbody2D rb;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
 
     [SerializeField]
@@ -10,10 +10,12 @@ public class spawnManager : MonoBehaviour
     [SerializeField]
     private GameObject _pipeContainer;
 
+    private Vector2 _screenBounds;
 
     // Start is called before the first frame update
     void Start()
     {
+        _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         StartCoroutine(SpawnCoroutine());
     }
 
@@ -29,13 +31,13 @@ public class spawnManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         while (true)
         {
-            float topPos = Random.Range(1.0f,4.0f) + _pipePrefab.GetComponent<SpriteRenderer>().bounds.size.y / 2;
-            Vector3 spawnPosTop = new Vector3(9.0f, topPos, 0.0f);
+            float topPos = Random.Range(1.0f,4.0f) + _pipePrefab.GetComponent<SpriteRenderer>().bounds.extents.y;
+            Vector3 spawnPosTop = new Vector3(_screenBounds.x, topPos, 0.0f);
 
             GameObject topPipe = Instantiate(_pipePrefab, spawnPosTop, Quaternion.identity);
 
             float botPos = topPos - Random.Range(3.5f, 5.0f) - _pipePrefab.GetComponent<SpriteRenderer>().bounds.size.y;
-            Vector3 spawnPosBot = new Vector3(9.0f, botPos, 0.0f);
+            Vector3 spawnPosBot = new Vector3(_screenBounds.x, botPos, 0.0f);
 
             GameObject botPipe = Instantiate(_pipePrefab, spawnPosBot, Quaternion.identity);
 
