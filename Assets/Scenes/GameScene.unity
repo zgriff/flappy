@@ -392,8 +392,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0355a9b5e32c16d488f41aee03baabfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  score: 0
+  _score: 0
+  _alive: 0
+  _UI: {fileID: 0}
 --- !u!95 &1085807464
 Animator:
   serializedVersion: 3
@@ -1153,3 +1154,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1572422564}
+  flappy: {fileID: 1085807459}

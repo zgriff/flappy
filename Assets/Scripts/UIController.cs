@@ -9,6 +9,9 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _scoreText;
 
+    [SerializeField]
+    private GameObject flappy;
+
     // Start is called before the first frame update
     void Start()
     {

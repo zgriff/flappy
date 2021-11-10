@@ -50,6 +50,8 @@ public class Background : MonoBehaviour
         Debug.Log(-rt.rect.width);
 
         gameObject.transform.localScale = new Vector3(worldWidth / w, worldHeight / h, 1);
+
+        //Modify second background image for endless scrolling
         gameObject.transform.GetChild(0).transform.localScale = new Vector3(1, 1, 1);
         gameObject.transform.GetChild(0).transform.position = new Vector3(-rt.rect.width*rt.localScale.x,0);
 
