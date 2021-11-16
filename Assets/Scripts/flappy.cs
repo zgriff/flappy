@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 
@@ -29,18 +30,37 @@ public class Flappy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _alive)
-        {
-            _rb.velocity = new Vector3(0,5,0);
-            _animator.SetTrigger("flap");
+        //if (Input.GetKeyDown(KeyCode.Space) && _alive)
+        //{
+        //    _rb.velocity = new Vector3(0,5,0);
+        //    _animator.SetTrigger("flap");
 
-            Debug.Log("space");
+        //    Debug.Log("space");
+        //}
+        //if (Input.GetKeyDown(KeyCode.R) && !_alive)
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //}
+    }
+
+    void OnJump()
+    {
+        if (_alive)
+        {
+            _rb.velocity = new Vector3(0, 5, 0);
+            _animator.SetTrigger("flap");
         }
-        if (Input.GetKeyDown(KeyCode.R) && !_alive)
+    }
+
+    void OnRestart()
+    {
+        if (!_alive)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
