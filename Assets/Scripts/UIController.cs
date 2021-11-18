@@ -10,6 +10,9 @@ public class UIController : MonoBehaviour
     private TextMeshProUGUI _scoreText;
 
     [SerializeField]
+    private TextMeshProUGUI _gameOverText;
+
+    [SerializeField]
     private GameObject flappy;
 
     // Start is called before the first frame update
@@ -21,7 +24,10 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!flappy.GetComponent<Flappy>().isAlive())
+        {
+            _gameOverText.gameObject.SetActive(true);
+        }
     }
 
     public void UpdateScore(int score)

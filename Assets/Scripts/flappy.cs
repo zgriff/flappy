@@ -9,6 +9,8 @@ public class Flappy : MonoBehaviour
 {
 
     public int _score = 0;
+
+    [SerializeField]
     private bool _alive;
 
     [SerializeField]
@@ -30,17 +32,7 @@ public class Flappy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space) && _alive)
-        //{
-        //    _rb.velocity = new Vector3(0,5,0);
-        //    _animator.SetTrigger("flap");
-
-        //    Debug.Log("space");
-        //}
-        //if (Input.GetKeyDown(KeyCode.R) && !_alive)
-        //{
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //}
+        
     }
 
     void OnJump()

@@ -11,8 +11,13 @@ public class SpawnController : MonoBehaviour
     private GameObject _pipeContainer;
     [SerializeField]
     private GameObject _goalPrefab;
+    [SerializeField]
+    private GameObject _player;
+
 
     private Vector2 _screenBounds;
+
+    private bool spawning;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +29,22 @@ public class SpawnController : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
-        
+        if (!_player.GetComponent<Flappy>().isAlive() && spawning)
+        {
+            Debug.Log("dead");
+            spawning = false;
+            StopCoroutine(SpawnCoroutine());
+        }
     }
 
 
     IEnumerator SpawnCoroutine()
     {
+        spawning = true;
+
         yield return new WaitForSeconds(3f);
-        while (true)
+
+        while (spawning)
         {
             float topPos = Random.Range(1.0f,4.0f) + _pipePrefab.GetComponent<SpriteRenderer>().bounds.extents.y;
             Vector3 spawnPosTop = new Vector3(_screenBounds.x, topPos, 0.0f);
@@ -58,6 +71,7 @@ public class SpawnController : MonoBehaviour
 
             yield return new WaitForSeconds(1.25f);
         }
+
     }
 
 }
