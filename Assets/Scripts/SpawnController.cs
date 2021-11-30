@@ -47,12 +47,12 @@ public class SpawnController : MonoBehaviour
         while (spawning)
         {
             float topPos = Random.Range(1.0f,4.0f) + _pipePrefab.GetComponent<SpriteRenderer>().bounds.extents.y;
-            Vector3 spawnPosTop = new Vector3(_screenBounds.x, topPos, 0.0f);
+            Vector3 spawnPosTop = new Vector3(_screenBounds.x + _pipePrefab.GetComponent<SpriteRenderer>().bounds.extents.x, topPos, 0.0f);
 
             GameObject topPipe = Instantiate(_pipePrefab, spawnPosTop, Quaternion.identity);
 
             float botPos = topPos - Random.Range(3.5f, 5.0f) - _pipePrefab.GetComponent<SpriteRenderer>().bounds.size.y;
-            Vector3 spawnPosBot = new Vector3(_screenBounds.x, botPos, 0.0f);
+            Vector3 spawnPosBot = new Vector3(_screenBounds.x + _pipePrefab.GetComponent<SpriteRenderer>().bounds.extents.x, botPos, 0.0f);
 
             GameObject botPipe = Instantiate(_pipePrefab, spawnPosBot, Quaternion.identity);
 

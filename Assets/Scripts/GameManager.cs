@@ -26,4 +26,11 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadScene(scene);
     }
 
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }
+    

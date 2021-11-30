@@ -5,6 +5,9 @@ using UnityEngine;
 public class Background : MonoBehaviour
 {
 
+    [SerializeField]
+    private GameObject _player;
+
     private SpriteRenderer sr;
 
     private RectTransform rt;
@@ -28,9 +31,12 @@ public class Background : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float newPos = Mathf.Repeat(Time.time * scrollSpeed, rt.rect.width * rt.localScale.x );
-        transform.position = startPos + Vector2.right * newPos;
-
+        if (_player.GetComponent<Flappy>().isAlive())
+        {
+            float newPos = Mathf.Repeat(Time.time * scrollSpeed, rt.rect.width * rt.localScale.x);
+            transform.position = startPos + Vector2.right * newPos;
+        }
+      
     }
 
     void ResizeToScreen()
