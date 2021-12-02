@@ -12,7 +12,7 @@ public class Background : MonoBehaviour
 
     private RectTransform rt;
 
-    float scrollSpeed = -5f;
+    float scrollSpeed = -3f;
     Vector2 startPos;
     
     // Start is called before the first frame update
@@ -55,7 +55,7 @@ public class Background : MonoBehaviour
         Debug.Log(worldHeight);
         Debug.Log(-rt.rect.width);
 
-        gameObject.transform.localScale = new Vector3(worldWidth / w, worldHeight / h, 1);
+        gameObject.transform.localScale = new Vector3(1, worldHeight / h, 1);
 
         //Modify second background image for endless scrolling
         gameObject.transform.GetChild(0).transform.localScale = new Vector3(1, 1, 1);

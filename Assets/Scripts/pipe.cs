@@ -6,7 +6,7 @@ public class Pipe : MonoBehaviour
 {
 
     [SerializeField]
-    private float speed = 5f;
+    private float speed = 3f;
 
     private Rigidbody2D rb;
 
@@ -15,7 +15,8 @@ public class Pipe : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector3(-speed, 0, 0);
+        rb.velocity = new Vector3(-speed, 0, 0);  
+        //gameObject.transform.transform.position
     }
 
     // Update is called once per frame
