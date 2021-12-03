@@ -6,23 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
 
-    //private void Awake()
-    //{
-    //    if (instance != null)
-    //    {
-    //        Destroy(gameObject);
-    //    }
-
-    //    else
-    //    {
-    //        instance = this;
-    //        DontDestroyOnLoad(gameObject);
-    //    }
-
-    //}
-
     public void SceneLoad(string scene) 
     {
+        Debug.Log(scene);
         SceneManager.LoadScene(scene);
     }
 

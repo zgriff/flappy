@@ -48,7 +48,15 @@ public class Flappy : MonoBehaviour
     {
         if (!_alive)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("GameScene");
+        }
+    }
+
+    void OnQuit()
+    {
+        if (!_alive)
+        {
+            SceneManager.LoadScene("MenuScene");
         }
     }
 
