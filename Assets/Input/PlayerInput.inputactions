@@ -38,14 +38,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Restart",
-                    "type": "Button",
-                    "id": "88275aac-fe87-49f0-9bfe-b83f5985a2b0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Quit",
                     "type": "Button",
                     "id": "6d052b02-9cde-48a1-973e-b42134864013",
@@ -289,22 +281,11 @@
                 {
                     "name": "",
                     "id": "baa2f8fc-ddaa-4625-8f0c-2aab2a96bd1a",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b0906f60-8924-4b80-8ba6-b78864d9d8a8",
-                    "path": "<Keyboard>/r",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Restart",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -822,6 +803,44 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "GameOver",
+            "id": "8667f94e-f031-408a-bc7c-8a22b3e1a440",
+            "actions": [
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "38caad56-8abf-468d-ac4e-ca5fcb095465",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2867a3c3-151c-492d-a6ff-6d2bb3119e23",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ceba12b5-f9bf-451b-9c0c-5a5f8a51a3fe",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

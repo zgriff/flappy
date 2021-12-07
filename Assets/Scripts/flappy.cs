@@ -20,11 +20,14 @@ public class Flappy : MonoBehaviour
 
     private Animator _animator;
 
+    private PlayerInput _input;
+
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _input = GetComponent<PlayerInput>();
         _UI = GameObject.Find("Canvas").GetComponent<UIController>();
         _alive = true;
     }
@@ -48,6 +51,7 @@ public class Flappy : MonoBehaviour
     {
         if (!_alive)
         {
+            _input.SwitchCurrentActionMap("Player");
             SceneManager.LoadScene("GameScene");
         }
     }
@@ -77,6 +81,7 @@ public class Flappy : MonoBehaviour
         if (collision.gameObject.name.Contains("Pipe"))
         {
             _alive = false;
+            _input.SwitchCurrentActionMap("GameOver");
         }
     }
 
